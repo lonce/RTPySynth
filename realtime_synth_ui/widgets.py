@@ -126,10 +126,10 @@ def build_synth_ui(
 
     def on_pick(change):
         if change['name'] == 'value':
-            # Swap in a fresh generator instance
-            provider = generators[change['value']]  # type: ignore[index]
+            key = change['new']                    # <-- use 'new', not 'value'
+            provider = generators[key]
             synth.set_generator(_instantiate(provider))
-            build_param_ui()
+            build_param_ui()                       # rebuild sliders/readouts for the new gen
 
     play_toggle.observe(on_play, names='value')
     gen_picker.observe(on_pick, names='value')

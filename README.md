@@ -20,7 +20,7 @@ Install directly from GitHub (no PyPI needed):
 pip install "rtpysynth[ui] @ git+https://github.com/lonce/RTPySynth@main"
 
 # Or pin a tagged release (recommended)
-pip install "rtpysynth[ui] @ git+https://github.com/lonce/RTPySynth@v0.1.3"
+pip install "rtpysynth[ui] @ git+https://github.com/lonce/RTPySynth@v0.1.4"
 ```
 
 **System deps**
