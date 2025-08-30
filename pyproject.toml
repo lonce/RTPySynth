@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rtpysynth"
-version = "0.1.2"
+version = "0.1.3"
 description = "Real-time audio synth engine with pluggable class-based generators and an ipywidgets UI."
 readme = "README.md"
 requires-python = ">=3.9"
