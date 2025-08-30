@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rtpysynth"
-version = "0.1.1"
+version = "0.1.2"
 description = "Real-time audio synth engine with pluggable class-based generators and an ipywidgets UI."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -28,5 +28,10 @@ Source = "https://github.com/lonce/RTPySynth"
 "NoisyLP" = "realtime_synth.generators.noisy_lp:NoisyLPGenerator"
 "Template" = "realtime_synth.generators.template:MyGeneratorTemplate"
 
-[tool.setuptools]
-packages = ["realtime_synth", "realtime_synth_ui"]
+[tool.setuptools.packages.find]
+include = [
+  "realtime_synth",
+  "realtime_synth.*",
+  "realtime_synth_ui",
+  "realtime_synth_ui.*",
+]
