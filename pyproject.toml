@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rtpysynth"
+version = "0.1.1"
+description = "Real-time audio synth engine with pluggable class-based generators and an ipywidgets UI."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Lonce Wyse" }]
+dependencies = [
+  "numpy>=1.22",
+  "sounddevice>=0.4.6",
+]
+
+[project.optional-dependencies]
+ui = ["ipywidgets>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/lonce/RTPySynth"
+Issues = "https://github.com/lonce/RTPySynth/issues"
+Source = "https://github.com/lonce/RTPySynth"
+
+[project.entry-points."realtime_synth.generators"]
+"Sine" = "realtime_synth.generators.sine:SineGenerator"
+"NoisyLP" = "realtime_synth.generators.noisy_lp:NoisyLPGenerator"
+"Template" = "realtime_synth.generators.template:MyGeneratorTemplate"
+
+[tool.setuptools]
+packages = ["realtime_synth", "realtime_synth_ui"]
